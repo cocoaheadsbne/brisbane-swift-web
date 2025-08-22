@@ -1,16 +1,16 @@
 ---
-import Head from "./Head.astro";
-
-const { ...props } = Astro.props;
+import Head from "../components/Head.astro";
+import NavMenu from "../components/NavMenu.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html>
   <head>
     <meta charset="utf-8" />
     <Head />
-    <!-- Additional head elements -->
   </head>
   <body>
-    <!-- Page content goes here -->
-  </body>
+    <NavMenu />
+    <slot />
+  </body><Footer />
 </html>
