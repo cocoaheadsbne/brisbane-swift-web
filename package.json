@@ -6,9 +6,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "astro": "^5.13.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.2.1",
+    "eslint": "^9.34.0"
   }
 }

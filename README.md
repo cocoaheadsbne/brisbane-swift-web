@@ -17,7 +17,6 @@ npm run dev
 ## Tech Stack
 * Build with [Astro](https://astro.build)
 
-
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -28,3 +27,5 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run lint`            | Checks the project for lint errors               |
+| `npm run lint:fix`        | Corrects fixable lint errors                     |
