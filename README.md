@@ -1,5 +1,9 @@
 # Brisbane.Swift Website
 
+## Requirements
+
+* [NodeJS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 22
+
 ## Local development
 
 1. Install the dependencies
