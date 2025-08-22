@@ -21,6 +21,7 @@ npm run dev
 ## Tech Stack
 
 - Build with [Astro](https://astro.build)
+- [TailwindCSS](https://tailwindcss.com/docs)
 
 ## Commands
 
