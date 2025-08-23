@@ -2,7 +2,6 @@
 - error pages (404/500)
 - extract content into config files
 - move nav bar into config files
-- dark mode
 
 ## SEO
 

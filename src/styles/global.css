@@ -13,6 +13,21 @@
 --color-background-secondary: #F6F6FA;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-default: var(--color-neutral-50);
+    --color-muted: var(--color-neutral-400);
+
+    --color-primary: oklch(66.6% 0.191 33.5deg);
+    --color-primary-secondary: oklch(66.6% 0.191 33.5deg);
+
+    --color-inverse: var(--color-neutral-800);
+
+    --color-background: var(--color-neutral-900);
+    --color-background-secondary: var(--color-neutral-800);
+  }
+}
+
 @layer components {
   .is-link {
 @apply font-medium hover:underline;
