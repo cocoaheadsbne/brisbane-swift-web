@@ -1,9 +1,30 @@
 ---
+import { Image } from "astro:assets";
+import laptopImage from "../assets/meetup.png";
 import MainLayout from "../layouts/MainLayout.astro";
+import { HREFS } from "../constants";
 ---
 
 <MainLayout>
-  <pre>
-   TODO: home
-  </pre>
+  <div
+    class="bg-background-secondary rounded-lg flex flex-col gap-12 pt-8 px-6 items-center pb-0"
+  >
+    <div class="flex flex-col gap-6 items-center">
+      <div class="space-y-2 text-center">
+        <h1 class="text-3xl font-medium">Brisbane.Swift</h1>
+        <p class="text-muted">In person • Second Thursday every month</p>
+      </div>
+      <a
+        href={HREFS.MEETUPCOM}
+        title="Brisbane.Swift at Meetup.com"
+        class="bg-primary text-inverse rounded-full py-1 px-4 hover:underline transition-colors"
+        >View event details</a
+      >
+    </div>
+    <Image
+      src={laptopImage}
+      class="max-w-[30rem] w-full"
+      alt="MacBook with stickers relating to Swift and Australia on it"
+    />
+  </div>
 </MainLayout>
