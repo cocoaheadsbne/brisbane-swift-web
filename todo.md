@@ -1,8 +1,8 @@
 - add to docs that `Head` houses metadata information
 - error pages (404/500)
 - extract content into config files
-- font
 - move nav bar into config files
+- dark mode
 
 ## SEO
 
