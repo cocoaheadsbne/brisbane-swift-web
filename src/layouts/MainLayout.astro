@@ -1,6 +1,6 @@
 ---
 import Head from "../components/Head.astro";
-import NavMenu from "../components/NavMenu.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 ---
@@ -10,8 +10,9 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <Head />
   </head>
-  <body>
-    <NavMenu />
+  <Header />
+  <main class="min-h-screen mt-4 is-container">
     <slot />
-  </body><Footer />
+  </main>
+  <Footer />
 </html>

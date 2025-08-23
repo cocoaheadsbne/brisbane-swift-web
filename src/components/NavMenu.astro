@@ -1,3 +1,28 @@
+---
+import { HREFS, ROUTES } from "../constants";
+
+const links = [
+  {
+    label: "About",
+    to: ROUTES.ABOUT,
+  },
+  {
+    label: "Events",
+    to: HREFS.MEETUPCOM,
+  },
+];
+---
+
 <nav>
-  <pre>TODO: nav menu</pre>
+  <ul class="flex gap-6">
+    {
+      links.map((link) => (
+        <li>
+          <a class="is-link text-primary" href={link.to} title={link.label}>
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </nav>
