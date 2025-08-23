@@ -4,7 +4,7 @@
 --color-default: var(--color-neutral-800);
 --color-muted: var(--color-neutral-600);
 
---color-primary: oklch(56.6% 0.191 33.5deg);
+--color-primary: #CE3918;
 --color-primary-secondary: #AE3112;
 
 --color-inverse: var(--color-neutral-50);
