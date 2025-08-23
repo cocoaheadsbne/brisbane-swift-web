@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
---color-default: var(--color-neutral-800);
---color-muted: var(--color-neutral-600);
+  --color-default: var(--color-neutral-800);
+  --color-muted: var(--color-neutral-600);
 
---color-primary: #CE3918;
---color-primary-secondary: #AE3112;
+  --color-primary: #ce3918;
+  --color-primary-secondary: #ae3112;
 
---color-inverse: var(--color-neutral-50);
+  --color-inverse: var(--color-neutral-50);
 
---color-background: var(--color-white);
---color-background-secondary: #F6F6FA;
+  --color-background: var(--color-white);
+  --color-background-secondary: #f6f6fa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,10 +30,10 @@
 
 @layer components {
   .is-link {
-@apply font-medium hover:underline;
+    @apply font-medium hover:underline;
   }
   .is-link-button {
-@apply bg-primary text-inverse rounded-full py-1 px-4 hover:underline transition-colors;
+    @apply bg-primary text-inverse rounded-full py-1 px-4 hover:underline transition-colors;
   }
   .is-container {
     --padding: 1rem;
@@ -42,9 +42,7 @@
     width: min(var(--max-width), 100% - (var(--padding) * 2));
     @apply mx-auto;
   }
-
 }
-
 
 html {
   @apply text-default bg-background;
