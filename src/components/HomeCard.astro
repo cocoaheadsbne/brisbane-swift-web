@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imagePlacement: "top" | "bottom";
+  link: {
+    href: string;
+    label: string;
+    title?: string;
+  };
+}
+
+const { title, description, link, imagePlacement } = Astro.props;
+---
+
+<article
+  class:list={[
+    "bg-background-secondary",
+    "rounded-lg",
+    "flex",
+    "flex-col",
+    "gap-12",
+    "px-6",
+    "items-center",
+    {
+      "pb-0 pt-8": imagePlacement === "bottom",
+      "pt-0 pb-8": imagePlacement === "top",
+    },
+  ]}
+>
+  {
+    imagePlacement === "top" && (
+      <div class="h-[13rem] w-full">
+        <slot name="image" />
+      </div>
+    )
+  }
+  <div class="flex flex-col gap-6 items-center">
+    <div class="space-y-2 text-center">
+      <slot name="title">
+        <h2 class="text-3xl font-medium">{title}</h2>
+      </slot>
+      <p class="text-muted">{description}</p>
+    </div>
+    <a
+      href={link.href}
+      title={link.title || link.label}
+      class="bg-primary text-inverse rounded-full py-1 px-4 hover:underline transition-colors"
+      >{link.label}</a
+    >
+  </div>
+  {
+    imagePlacement === "bottom" && (
+      <div class="h-[13rem]">
+        <slot name="image" />
+      </div>
+    )
+  }
+</article>
