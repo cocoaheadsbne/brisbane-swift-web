@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@theme {
+--color-default: var(--color-neutral-800);
+--color-muted: var(--color-neutral-600);
+
+--color-primary: oklch(56.6% 0.191 33.5deg);
+--color-primary-secondary: #AE3112;
+
+--color-inverse: var(--color-neutral-50);
+
+--color-background: var(--color-white);
+--color-background-secondary: #F6F6FA;
+}
+
+@layer components {
+  .is-link {
+@apply font-medium hover:underline;
+  }
+  .is-container {
+    --padding: 1rem;
+    --max-width: 1024px;
+
+    width: min(var(--max-width), 100% - (var(--padding) * 2));
+    @apply mx-auto;
+  }
+
+}
+
+
+html {
+  @apply text-default bg-background;
+}
