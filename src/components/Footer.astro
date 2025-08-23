@@ -1,3 +1,82 @@
-<footer>
-  <pre>TODO: footer</pre>
+---
+import { ROUTES, HREFS } from "../constants";
+import { Icon } from "astro-icon/components";
+
+const links = [
+  {
+    label: "About",
+    to: ROUTES.ABOUT,
+  },
+  {
+    label: "Events",
+    to: HREFS.MEETUPCOM,
+  },
+  {
+    label: "Slack Invite",
+    to: HREFS.SLACK_INVITE,
+  },
+];
+
+const socials = [
+  {
+    iconName: "mdi:meetup",
+    to: HREFS.MEETUPCOM,
+    label: "Meetup.com",
+  },
+  {
+    iconName: "mdi:slack",
+    to: HREFS.SLACK_INVITE,
+    label: "Slack invite",
+  },
+  {
+    iconName: "mdi:github",
+    to: "https://github.com/cocoaheadsbne",
+    label: "GitHub",
+  },
+];
+---
+
+<footer class="bg-background-secondary mt-8 py-8 text-muted">
+  <div class="is-container flex flex-col gap-6 items-center">
+    <nav>
+      <ul class="flex gap-6 items-center flex-wrap">
+        {
+          links.map((link) => (
+            <li>
+              <a class="is-link" href={link.to} title={link.label}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <ul class="flex gap-6">
+      {
+        socials.map((link) => (
+          <li>
+            <a
+              href={link.to}
+              title={link.label}
+              class="hover:text-default transition-colors"
+            >
+              <Icon name={link.iconName} class="size-10" aria-hidden />
+              <span class="sr-only">{link.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="space-y-1 text-center text-sm mt-4">
+      <p>{`Copyright © ${new Date().getFullYear()} Brisbane.Swift`}</p>
+      <p>All rights reserved.</p>
+    </div>
+    <p class="text-center max-w-prose text-sm">
+      Brisbane.Swift acknowledges the Jagera people and the Turrbal people as
+      the Traditional Custodians of Meanjin (Brisbane), the lands on which we
+      meet, work and learn. We pay our respects to Jagera and Turrbal Elders
+      past, present and emerging.
+    </p>
+  </div>
 </footer>

@@ -1,12 +1,19 @@
 ---
 import NavMenu from "./NavMenu.astro";
+import AppImage from "./AppImage.astro";
 import { ROUTES } from "../constants";
+import logo from "../assets/images/logo.png";
 ---
 
-<header class="py-8 flex flex-col items-center gap-6">
-  <a href={ROUTES.HOME} class="flex flex-col items-center gap-2 group">
-    <img
-      src="/img/logo.png"
+<header
+  class="py-8 flex flex-col items-center gap-6 is-container sm:flex-row sm:justify-between"
+>
+  <a
+    href={ROUTES.HOME}
+    class="flex flex-col items-center gap-2 group sm:flex-row sm:gap-4"
+  >
+    <AppImage
+      image={logo}
       alt="Brisbane.Swift logo"
       class="size-16 group-hover:scale-105 transition-transform"
     />

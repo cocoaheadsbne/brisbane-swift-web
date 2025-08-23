@@ -1,0 +1,18 @@
+---
+import type { LocalImageProps } from "astro:assets";
+import { Picture } from "astro:assets";
+
+type Props = {
+  image: ImageMetadata;
+} & Pick<LocalImageProps, "loading" | "class" | "alt" | "widths">;
+const { image, ...props } = Astro.props;
+---
+
+<Picture
+  {...props}
+  format="webp"
+  layout="constrained"
+  src={image}
+  width={image.width}
+  height={image.height}
+/>

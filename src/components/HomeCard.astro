@@ -3,6 +3,7 @@ interface Props {
   title: string;
   description: string;
   imagePlacement: "top" | "bottom";
+  class?: string;
   link: {
     href: string;
     label: string;
@@ -10,7 +11,13 @@ interface Props {
   };
 }
 
-const { title, description, link, imagePlacement } = Astro.props;
+const {
+  title,
+  description,
+  link,
+  imagePlacement,
+  class: classes,
+} = Astro.props;
 ---
 
 <article
@@ -27,6 +34,7 @@ const { title, description, link, imagePlacement } = Astro.props;
       "pt-0 pb-8": imagePlacement === "top",
     },
   ]}
+  class={classes}
 >
   {
     imagePlacement === "top" && (
@@ -42,10 +50,7 @@ const { title, description, link, imagePlacement } = Astro.props;
       </slot>
       <p class="text-muted">{description}</p>
     </div>
-    <a
-      href={link.href}
-      title={link.title || link.label}
-      class="bg-primary text-inverse rounded-full py-1 px-4 hover:underline transition-colors"
+    <a href={link.href} title={link.title || link.label} class="is-link-button"
       >{link.label}</a
     >
   </div>

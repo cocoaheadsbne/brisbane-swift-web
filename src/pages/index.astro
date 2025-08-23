@@ -1,8 +1,9 @@
 ---
-import { Picture } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import { HREFS, ROUTES } from "../constants";
 import HomeCard from "../components/HomeCard.astro";
+import HomeSponsors from "../components/HomeSponsors.astro";
+import AppImage from "../components/AppImage.astro";
 import laptopImage from "../assets/images/meetup.png";
 import slackImage from "../assets/images/slack.png";
 
@@ -11,94 +12,84 @@ import venueImageTwo from "../assets/images/venue2.jpg";
 ---
 
 <MainLayout>
-  <div class="space-y-8">
-    <HomeCard
-      title="Brisbane.Swift"
-      description="In person • Second Thursday every month"
-      link={{
-        href: HREFS.MEETUPCOM,
-        title: "Brisbane.Swift at Meetup.com",
-        label: "View event details",
-      }}
-      imagePlacement="bottom"
-    >
-      <h1 class="text-3xl font-medium" slot="title">Brisbane.Swift</h1>
-      <Picture
-        format="webp"
-        slot="image"
-        src={laptopImage}
-        loading="eager"
-        width={laptopImage.width}
-        height={laptopImage.height}
-        class="w-full h-full"
-        alt="MacBook with stickers relating to Swift and Australia on it"
-        layout="constrained"
-      />
-    </HomeCard>
+  <div class="space-y-10 pb-10">
+    <div class="grid gap-6 md:grid-cols-2">
+      <HomeCard
+        class="md:col-span-full"
+        title="Brisbane.Swift"
+        description="In person meetup • Second Thursday every month"
+        link={{
+          href: HREFS.MEETUPCOM,
+          title: "Brisbane.Swift at Meetup.com",
+          label: "View event details",
+        }}
+        imagePlacement="bottom"
+      >
+        <h1 class="text-3xl font-medium" slot="title">Brisbane.Swift</h1>
+        <AppImage
+          slot="image"
+          image={laptopImage}
+          loading="eager"
+          class="w-full h-full"
+          alt="MacBook with stickers relating to Swift and Australia on it"
+        />
+      </HomeCard>
 
-    <HomeCard
-      title="Join us on Slack"
-      description="Be a part of the community"
-      link={{
-        href: HREFS.SLACK_INVITE,
-        label: "Get an invite",
-        title: "CocoaHeads AU & NZ Slack invite",
-      }}
-      imagePlacement="top"
-    >
-      <Picture
-        layout="constrained"
-        format="webp"
-        slot="image"
-        src={slackImage}
-        class="w-auto h-full pt-8 object-fit mx-auto"
-        alt="Group of Memoji having a conversation with Emojis"
-        loading="eager"
-        width={slackImage.width}
-        height={slackImage.height}
-      />
-    </HomeCard>
-    <HomeCard
-      title="About the meetup"
-      description="Learn all the details about Brisbane.Swift"
-      link={{
-        href: ROUTES.ABOUT,
-        label: "Get to know us",
-        title: "About the meetup",
-      }}
-      imagePlacement="top"
-    >
-      <div slot="image" class="pt-8 relative w-full h-full">
-        <div
-          class="grid grid-cols-1 grid-rows-1 justify-items-center py-8 w-full h-full"
-        >
-          <div class="image-wrapper">
-            <Picture
-              format="webp"
-              class="-translate-y-8 translate-x-16"
-              src={venueImageOne}
-              alt="A modern kitchen area in an office"
-              width={venueImageOne.width}
-              height={venueImageOne.height}
-              loading="eager"
-              layout="constrained"
-            />
-          </div>
-          <div class="image-wrapper">
-            <Picture
-              format="webp"
-              class="translate-y-8 -translate-x-16"
-              src={venueImageTwo}
-              alt="A presentation room with sofas, and chairs around table"
-              loading="eager"
-              width={venueImageTwo.width}
-              height={venueImageTwo.height}
-              layout="constrained"
-            />
+      <HomeCard
+        title="Join us on Slack"
+        description="Be a part of the community"
+        link={{
+          href: HREFS.SLACK_INVITE,
+          label: "Get an invite",
+          title: "CocoaHeads AU & NZ Slack invite",
+        }}
+        imagePlacement="top"
+      >
+        <AppImage
+          image={slackImage}
+          slot="image"
+          class="w-auto h-full pt-8 object-fit mx-auto"
+          alt="Group of Memoji having a conversation with Emojis"
+          loading="eager"
+        />
+      </HomeCard>
+      <HomeCard
+        title="Get to know us"
+        description="What to expect at Brisbane.Swift"
+        link={{
+          href: ROUTES.ABOUT,
+          label: "Learn about the meetup",
+          title: "About the meetup",
+        }}
+        imagePlacement="top"
+      >
+        <div slot="image" class="pt-8 relative w-full h-full">
+          <div
+            class="grid grid-cols-1 grid-rows-1 justify-items-center py-8 w-full h-full"
+          >
+            <div class="image-wrapper">
+              <AppImage
+                class="-translate-y-8 translate-x-16 md:translate-x-8"
+                widths={[240, 360]}
+                image={venueImageOne}
+                alt="A modern kitchen area in an office"
+                loading="eager"
+              />
+            </div>
+            <div class="image-wrapper">
+              <AppImage
+                widths={[240, 360]}
+                class="translate-y-8 -translate-x-16 md:-translate-x-8"
+                image={venueImageTwo}
+                alt="A presentation room with sofas, and chairs around table"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </HomeCard>
+      </HomeCard>
+    </div>
+    <HomeSponsors />
   </div>
 </MainLayout>
 

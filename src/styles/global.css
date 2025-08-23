@@ -17,9 +17,12 @@
   .is-link {
 @apply font-medium hover:underline;
   }
+  .is-link-button {
+@apply bg-primary text-inverse rounded-full py-1 px-4 hover:underline transition-colors;
+  }
   .is-container {
     --padding: 1rem;
-    --max-width: 1024px;
+    --max-width: 42rem;
 
     width: min(var(--max-width), 100% - (var(--padding) * 2));
     @apply mx-auto;

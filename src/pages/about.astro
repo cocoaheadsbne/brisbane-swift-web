@@ -1,9 +1,102 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { HREFS } from "../constants";
 ---
 
 <MainLayout>
-  <pre>
-   TODO: home
-  </pre>
+  <div class="space-y-10 pb-10 max-w-prose">
+    <section>
+      <h1 class="text-3xl font-medium">About</h1>
+      <p>
+        Brisbane.swift (formerly CocoaHeads) is the place for Brisbane
+        developers writing great apps for iOS, tvOS, watchOS and macOS using
+        Swift.
+      </p>
+      <p>
+        Whether you're new to developing for iOS or have 10 years experience,
+        come meet other developers and learn a thing or two about Swift, Xcode,
+        and Apple technologies.
+      </p>
+      <div class="flex items-center gap-2">
+        <a
+          href={HREFS.MEETUPCOM}
+          class="is-link-button"
+          title="Meetup information"
+        >
+          Find next meetup
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>What to expect</h2>
+      <p>
+        We usually kick off the night by chatting over pizza and drinks provided
+        by
+        <a class="is-link" href={HREFS.MANTEL_GROUP}>Mantel Group</a>, our venue
+        sponsor.
+      </p>
+
+      <p>
+        After sufficiently talking shop (and complaining about XCode), a speaker
+        presents a talk that dives deep into iOS, macOS or other software
+        development topics.
+      </p>
+
+      <p>
+        You’re welcome to hang around to dive deeper into the talk, ask
+        questions or connect with other Indie devs.
+      </p>
+      <p>
+        Whether you’re joining for the first time, or a regular attendee, the
+        Brisbane.Swift community is a friendly and knowledgeable group who are
+        keen to chat about al things iOS and macOS.
+      </p>
+    </section>
+
+    <section>
+      <h2>Community</h2>
+      <p>
+        We are open to everyone. Our group consists of diverse mix of
+        people—from Indies, over Senior Devs to people getting started with iOS
+        development.
+      </p>
+      <p>
+        No matter where you’re at in your development journey, we’d love to have
+        you!
+      </p>
+      <p>
+        Our Slack channel is the best way to learn about what’s going on and to
+        connect with others, even prior to visiting your first meetup.
+      </p>
+      <div class="flex items-center gap-2">
+        <a
+          href={HREFS.SLACK_INVITE}
+          class="is-link-button bg-transparent border-primary border text-primary"
+          title="Slack invite"
+        >
+          Join the Slack
+        </a>
+      </div>
+    </section>
+  </div>
 </MainLayout>
+
+<style>
+  @reference "../styles/global.css";
+
+  h1 {
+    @apply pb-2;
+  }
+
+  h2 {
+    @apply text-3xl font-medium pb-1 pt-2;
+  }
+
+  p {
+    @apply text-muted;
+  }
+  section {
+    @apply space-y-4;
+  }
+</style>
