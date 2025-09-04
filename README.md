@@ -23,6 +23,11 @@ npm run dev
 - Build with [Astro](https://astro.build)
 - [TailwindCSS](https://tailwindcss.com/docs)
 
+## Branches
+
+- `main` – Automatically deploys to the live site
+- `develop` – Does not deploy, for development
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
